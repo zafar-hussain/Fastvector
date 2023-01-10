@@ -14,3 +14,5 @@ jobs:
         run: pip install -r requirements-dev.txt
       - name: trunk check
         uses: trunk-io/trunk-action@v1
+      - name: test with pytest
+        run: pytest ./tests --doctest-modules --junitxml=junit/test-results.xml --cov=com --cov-report=xml --cov-report=html
