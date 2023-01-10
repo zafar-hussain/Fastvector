@@ -1,0 +1,16 @@
+name: lintinh
+on: [push, pull_request, workflow_dispatch]
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+      - name: get python
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.9.15
+      - name: get dependencies
+        run: pip install -r requirements-dev.txt
+      - name: trunk check
+        uses: trunk-io/trunk-action@v1
