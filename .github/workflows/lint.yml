@@ -9,7 +9,8 @@ jobs:
       - name: get python
         uses: actions/setup-python@v4
         with:
-          python-version: 3.9.15
+          python-version: "3.9.15"
+          cache: "pip"
       - name: get dependencies
         run: pip install -r requirements-dev.txt
       - name: trunk check
